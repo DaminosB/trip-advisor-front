@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourisme à Paris 2023 : Visiter Paris - Tripadvisor</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/fonts.css" />
+    <link rel="stylesheet" href="./assets/css/icons.css" />
+    <script src="./assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <span class="show-x-small" href="#">
+          <i class="icon-menu_bars"></i>
+        </span>
+        <img src="./assets/img/logo.svg" alt="Logo Tripadvisor" />
+        <nav>
+          <a class="hide-x-small" href="#">
+            <i class="icon-pencil"></i>
+            <p class="hide-small">Avis</p>
+          </a>
+          <a class="hide-x-small" href="#">
+            <i class="icon-heart"></i>
+            <p class="hide-small">Voyages</p>
+          </a>
+          <a class="hide-x-small" href="#">
+            <i class="icon-notification_bell"></i>
+            <p class="hide-small">Alertes</p>
+          </a>
+          <button class="hide-x-small white-text" id="form">
+            Connectez-vous
+          </button>
+          <a class="show-x-small" href="#">
+            <img src="./assets/img/magnifying-glass.png" alt="" />
+          </a>
+          <a href="#">
+            <i class="icon-empty_cart"></i>
+            <p class="hide-small">Panier</p>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div id="contact-form" class="hidden">
+        <div class="form-wrapper">
+          <form>
+            <button type="button" id="close">&#x2715;</button>
+            <img src="./assets/img/logo-circle.svg" alt="Logo trip-advisor" />
+            <p>Gardons le contact&nbsp;!</p>
+            <label for="first-name">
+              <input
+                type="text"
+                name="firstname"
+                id="firstname"
+                placeholder="Votre prénom"
+                value="Damien"
+              />
+            </label>
+            <label for="last-name">
+              <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                placeholder="Votre nom"
+                value="Bourcheix"
+              />
+            </label>
+            <label for="email">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Votre adresse e-mail"
+                value="damien.bourcheix@gmail.com"
+              />
+            </label>
+            <label for="textarea">
+              <textarea name="message" id="message" rows="10">blabla</textarea>
+            </label>
+            <button class="send-button white-text" type="submit">
+              Envoyer
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="container">
+        <h1><span class="orange-text">Explorez</span> Paris</h1>
+        <p class="baseline gray-text">
+          Les revenus influencent le choix des expériences présentées sur cette
+          page :
+          <a
+            class="gray-text underlined"
+            href="https://www.tripadvisor.fr/pages/service_fr.html"
+          >
+            en savoir plus</a
+          >.
+        </p>
+        <nav class="main-nav strong">
+          <a href="#">
+            <div>
+              <p>Hôtels</p>
+              <i class="icon-hotels"></i>
+            </div>
+          </a>
+          <a href="#">
+            <div>
+              <p>Activités</p>
+              <i class="icon-attractions"></i>
+            </div>
+          </a>
+          <a href="#">
+            <div>
+              <p>Location de vacances</p>
+              <i class="icon-vacation_rentals"></i>
+            </div>
+          </a>
+          <a href="#">
+            <div>
+              <p>Restaurants</p>
+              <i class="icon-restaurants"></i>
+            </div>
+          </a>
+          <a href="#">
+            <div>
+              <p>Forums de voyage</p>
+              <i class="icon-forums"></i>
+            </div>
+          </a>
+          <a class="show-medium" href="#">
+            <div>
+              <p>Vols</p>
+              <i class="icon-flights"></i>
+            </div>
+          </a>
+          <a class="show-medium" href="#">
+            <div>
+              <p>Croisières</p>
+              <i class="icon-cruises"></i>
+            </div>
+          </a>
+          <a href="#">
+            <div>
+              <p>Plus</p>
+              <i class="icon-more_horizontal"></i>
+            </div>
+          </a>
+        </nav>
+        <section class="pictures">
+          <div class="img-block">
+            <div class="left-panel">
+              <a href="#">
+                <img
+                  src="./assets/img/photo-1.jpg"
+                  alt="Des immeubles sur un quai de la Seine"
+                />
+              </a>
+            </div>
+            <div class="right-panel">
+              <div>
+                <a href="#">
+                  <img
+                    src="./assets/img/photo-2.jpg"
+                    alt="Un couple sur une moto"
+                  />
+                </a>
+              </div>
+              <div>
+                <a href="#">
+                  <img
+                    src="./assets/img/photo-3.jpg"
+                    alt="Des fontaines aux pieds de la Tour-Eiffel"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hide-x-small breadcrumb gray-text">
+            <nav>
+              <ul>
+                <li><a href="#">Europe</a></li>
+                <li><a href="#">France</a></li>
+                <li><a href="#">Île-de-France</a></li>
+                <li><a href="#">Paris</a></li>
+              </ul>
+            </nav>
+            <div>
+              <p>Visiter : Paris</p>
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <div class="about-text">
+            <h2>À propos de Paris</h2>
+            <p class="basic gray-text">
+              On dit que Paris est la plus belle ville du monde. Et elle a
+              quelque chose de magique ! Comment résister aux charmes des
+              immeubles haussmanniens en pierre et fer forgé, des trottoirs
+              parsemés de bistrot pittoresques et des rives de la Seine ? Mais
+              Paris, c’est aussi la cuisine : les fins gourmets apprécieront les
+              classiques croissants dorés au beurre et les plats traditionnels
+              comme le coq au vin. Mais les nombreux restaurants de cuisine
+              internationale inventive font aujourd’hui la part belle à la
+              nouvelle scène culinaire française qui mélange les saveurs (les
+              falafels de la rue des Rosiers sont tout simplement à tomber).
+              Laissez-vous aller à la flânerie dans les ruelles cachées, dans
+              les musées renommés et les boutiques spécialisées. À la nuit
+              tombée, rendez-vous sur le Champ-de-Mars pour profiter d'une vue
+              imprenable sur les illuminations de la tour Eiffel.
+            </p>
+          </div>
+          <aside>
+            <div class="text">
+              <h2>Paris : Commencer à s'organiser</h2>
+              <p>
+                Créez un voyage pour enregistrer et organiser toutes vos idées
+                et les visualiser sur une carte.
+              </p>
+              <button class="white-text">Créez un voyage</button>
+            </div>
+            <div class="map-img"><img src="./assets/img/map.png" alt="" /></div>
+          </aside>
+        </section>
+        <section class="unmissables">
+          <h2>Paris : les immanquables</h2>
+          <div class="carousel-wrapper">
+            <div>
+              <h3>Se divertir</h3>
+              <p class="basic gray-text">
+                Des lieux à voir, des rues à explorer et des expériences
+                emblématiques à Paris.
+              </p>
+              <a class="underlined strong" href="#">Tout afficher</a>
+            </div>
+            <div class="carousel">
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img
+                      src="./assets/img/tour-eiffel.jpg"
+                      alt="La Tour-Eiffel"
+                    />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>La Tour Eiffel</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">
+                    Tours et plateformes d'observation, Monuments & Points
+                    d'intérêt
+                  </p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/louvre.jpg" alt="Musée du Louvre" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Musée du Louvre</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">
+                    Bâtiments architecturaux, Musées d'art
+                  </p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img
+                      src="./assets/img/arc-de-triomphe.jpg"
+                      alt="La Tour-Eiffel"
+                    />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>L'Arc de Triomphe</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">
+                    Bâtiments architecturaux, Sites historiques
+                  </p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/rodin.jpg" alt="La Tour-Eiffel" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Musée Rodin Paris VII</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">Musées spécialisés</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img
+                      src="./assets/img/librairie.jpg"
+                      alt="La Tour-Eiffel"
+                    />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Librairie Shakespeare and Company Paris V</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">Bibliothèques, Grands magasins</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img
+                      src="./assets/img/notre-dame.jpg"
+                      alt="La Tour-Eiffel"
+                    />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Cathédrale Notre-Dame de Paris</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">
+                    Bâtiments architecturaux, Sites historiques
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-wrapper">
+            <div>
+              <h3>Se reposer</h3>
+              <p class="basic gray-text">
+                Un mélange de charme, de symboles et de modernité.
+              </p>
+              <a class="underlined strong" href="#">Tout afficher</a>
+            </div>
+            <div class="carousel">
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img
+                      src="./assets/img/palais-royal.jpg"
+                      alt="La Tour-Eiffel"
+                    />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Grand Hotel du Palais Royal</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img
+                      src="./assets/img/saint-germain.jpg"
+                      alt="Musée du Louvre"
+                    />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Hôtel Esprit Saint-Germain</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img
+                      src="./assets/img/cadet-residence.jpg"
+                      alt="La Tour-Eiffel"
+                    />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Cadet Residence</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/bristol.jpg" alt="La Tour-Eiffel" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Le Bristol Paris</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/reserve.jpg" alt="La Tour-Eiffel" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>La Réserve Paris - Hotel and Spa</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/george-v.jpg" alt="La Tour-Eiffel" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Four Seasons Hotel George V</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="carousel-wrapper">
+            <div>
+              <h3>Se restaurer</h3>
+              <p class="basic gray-text">
+                Bistrots et bars typiques, et plus encore à Paris.
+              </p>
+              <a class="underlined strong" href="#">Tout afficher</a>
+            </div>
+            <div class="carousel">
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/verjus.jpg" alt="La Tour-Eiffel" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Verjus</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">€€€€ • Française, Européenne, Moderne</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img
+                      src="./assets/img/114-faubourg.jpg"
+                      alt="Musée du Louvre"
+                    />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <div class="michelin strong">
+                    <img src="./assets/img/michelin.svg" alt="" />
+                    <span>MICHELIN</span>
+                  </div>
+                  <h4>114 Faubourg</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">
+                    €€€€ • Française, Européenne, Végétariens bienvenus
+                  </p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/frenchie.jpg" alt="La Tour-Eiffel" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <div class="michelin strong">
+                    <img src="./assets/img/michelin.svg" alt="" />
+                    <span>MICHELIN</span>
+                  </div>
+                  <h4>Frenchie - Rue du Nil</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">
+                    €€€€ • Française, Végétariens bienvenus, Plats sans gluten
+                  </p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/colette.jpg" alt="La Tour-Eiffel" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <div class="michelin strong">
+                    <img src="./assets/img/michelin.svg" alt="" />
+                    <span>MICHELIN</span>
+                  </div>
+                  <h4>La table de Colette</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">€€€€ • Française, Européenne, Saines</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/aspic.jpg" alt="La Tour-Eiffel" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <div class="michelin strong">
+                    <img src="./assets/img/michelin.svg" alt="" />
+                    <span>MICHELIN</span>
+                  </div>
+                  <h4>ASPIC</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">€€€€ • Française, Européenne, Moderne</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="single">
+                  <div class="thumbnail">
+                    <img src="./assets/img/gigi.jpg" alt="La Tour-Eiffel" />
+                    <div class="heart">
+                      <i class="icon-heart"></i>
+                    </div>
+                    <div class="badge"></div>
+                  </div>
+                  <h4>Crêperie Gigi</h4>
+                  <div class="rating gray-text">
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_full"></i>
+                    <i class="icon-bubble_rating_half"></i>
+                    <span>141 998</span>
+                  </div>
+                  <p class="gray-text">
+                    €€-€€€ • Française, Végétariens bienvenus, Choix végétaliens
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="travelers-choice">
+              <div>
+                <h3>Experiences Travelers' Choice Best of the Best</h3>
+                <p>
+                  La crème de la crème, une sélection à partir d'avis
+                  authentiques.
+                </p>
+                <button class="white-text">Voir la liste</button>
+              </div>
+              <img
+                class="hide-x-small"
+                src="./assets/img/snorkling.jpg"
+                alt=""
+              />
+            </div>
+          </a>
+        </section>
+        <section class="more">
+          <h2>Louez un logement pour votre prochaine escapade</h2>
+          <h3>Locations populaires à Paris</h3>
+          <div class="carousel">
+            <a href="#">
+              <div class="single">
+                <div class="thumbnail">
+                  <img src="./assets/img/appt-1.jpg" alt="La Tour-Eiffel" />
+                  <div class="heart">
+                    <i class="icon-heart"></i>
+                  </div>
+                  <div class="badge"></div>
+                </div>
+                <h4>Appartamento tranquillo su un bel cortile alberato</h4>
+                <div class="rating gray-text">
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_half"></i>
+                  <span>141 998</span>
+                </div>
+                <p class="gray-text">
+                  6 couchages • 2 chambres • 2 salles de bain
+                </p>
+                <p class="price strong">à partir de 99€/nuit</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="single">
+                <div class="thumbnail">
+                  <img src="./assets/img/appt-2.jpg" alt="La Tour-Eiffel" />
+                  <div class="heart">
+                    <i class="icon-heart"></i>
+                  </div>
+                  <div class="badge"></div>
+                </div>
+                <h4>Beautiful Vacation Rental at Arc de Triomphe in Paris</h4>
+                <div class="rating gray-text">
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_half"></i>
+                  <span>141 998</span>
+                </div>
+                <p class="gray-text">
+                  5 couchages • 2 chambres • 2 salles de bain
+                </p>
+                <p class="price strong">à partir de 548€/nuit</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="single">
+                <div class="thumbnail">
+                  <img src="./assets/img/appt-3.jpg" alt="La Tour-Eiffel" />
+                  <div class="heart">
+                    <i class="icon-heart"></i>
+                  </div>
+                  <div class="badge"></div>
+                </div>
+                <h4>Paris - Place Clichy Appartement 2 Pieces avec pkg</h4>
+                <div class="rating gray-text">
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_half"></i>
+                  <span>141 998</span>
+                </div>
+                <p class="gray-text">
+                  6 couchages • 2 chambres • 2 salles de bain
+                </p>
+                <p class="price strong">à partir de 149€/nuit</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="single">
+                <div class="thumbnail">
+                  <img src="./assets/img/appt-4.jpg" alt="La Tour-Eiffel" />
+                  <div class="heart">
+                    <i class="icon-heart"></i>
+                  </div>
+                  <div class="badge"></div>
+                </div>
+                <h4>DUPLEX 70m² PARIS CENTRE TERRASSE TOITS DE PARIS</h4>
+                <div class="rating gray-text">
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_half"></i>
+                  <span>141 998</span>
+                </div>
+                <p class="gray-text">
+                  8 couchages • 3 chambres • 2 salles de bain
+                </p>
+                <p class="price strong">à partir de 468€/nuit</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="single">
+                <div class="thumbnail">
+                  <img src="./assets/img/appt-5.jpg" alt="La Tour-Eiffel" />
+                  <div class="heart">
+                    <i class="icon-heart"></i>
+                  </div>
+                  <div class="badge"></div>
+                </div>
+                <h4>STUDIO PARIS CENTRE DANS UN QUARTIER VIVANT</h4>
+                <div class="rating gray-text">
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_half"></i>
+                  <span>141 998</span>
+                </div>
+                <p class="gray-text">2 couchages • 1 salle de bain</p>
+                <p class="price strong">à partir de 97€/nuit</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="single">
+                <div class="thumbnail">
+                  <img src="./assets/img/appt-6.jpg" alt="La Tour-Eiffel" />
+                  <div class="heart">
+                    <i class="icon-heart"></i>
+                  </div>
+                  <div class="badge"></div>
+                </div>
+                <h4>Appartement 15 arrondissement</h4>
+                <div class="rating gray-text">
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_full"></i>
+                  <i class="icon-bubble_rating_half"></i>
+                  <span>141 998</span>
+                </div>
+                <p class="gray-text">
+                  3 couchages • 1 chambre • 1 salle de bain
+                </p>
+                <p class="price strong">à partir de 115€/nuit</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <img src="./assets/img/icone.png" alt="" />
+        <p>
+          Made at <span class="strong">Le Réacteur</span> by
+          <span class="strong">Damien Bourcheix</span> - 2023
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
