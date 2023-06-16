@@ -31,7 +31,7 @@ $.addEventListener("DOMContentLoaded", () => {
     // console.log({ firstname, lastname, email, message });
 
     const response = await axios.post(
-      "http://localhost:3000/form/new-message",
+      "https://site--trip-advisor-back--kc7q9tc45mqv.code.run/form/new-message",
       {
         firstname,
         lastname,
@@ -39,6 +39,8 @@ $.addEventListener("DOMContentLoaded", () => {
         message,
       }
     );
+
+    $.querySelector("#contact-form").classList.add("hidden");
 
     console.log(response.data);
   });
