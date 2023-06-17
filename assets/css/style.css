@@ -82,6 +82,10 @@ i {
   color: #ff5d5d;
 }
 
+.red-text {
+  color: red;
+}
+
 .white-text {
   color: white;
 }
@@ -241,11 +245,6 @@ i {
   height: 40px;
   align-self: flex-start;
   margin-bottom: 30px;
-}
-
-.form-wrapper p {
-  font-size: 24px;
-  font-family: TS-Med;
 }
 
 .form-wrapper :is(input, textarea) {
