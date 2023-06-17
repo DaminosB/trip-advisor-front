@@ -1,13 +1,22 @@
 const $ = document; // création d'un raccourci
+
 $.addEventListener("DOMContentLoaded", () => {
   // Action au clic sur le bouton connexion
-  $.querySelector("#form").addEventListener("click", () => {
+  $.querySelector("#connexion-header").addEventListener("click", () => {
+    $.querySelector("#contact-form").classList.toggle("hidden");
+  });
+
+  $.querySelector("#connexion-menu").addEventListener("click", () => {
     $.querySelector("#contact-form").classList.toggle("hidden");
   });
 
   // Action au clic sur la croix
-  $.querySelector("#close").addEventListener("click", () => {
+  $.querySelector("#close-contact-form").addEventListener("click", () => {
     $.querySelector("#contact-form").classList.add("hidden");
+  });
+
+  $.querySelector("#close-menu").addEventListener("click", () => {
+    $.querySelector("#menu-wrapper").classList.add("hidden");
   });
 
   // Formulaire de contact
@@ -39,6 +48,22 @@ $.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       $.querySelector("#text-error").classList.toggle("hidden");
       console.log(error.message);
+    }
+  });
+
+  $.querySelector("#menu").addEventListener("click", () => {
+    $.querySelector("#menu-wrapper").classList.toggle("hidden");
+  });
+
+  window.addEventListener("resize", function () {
+    const windowWidth = window.innerWidth;
+
+    const divElement = $.querySelector("#menu-wrapper");
+
+    // console.log(divElement);
+
+    if (windowWidth > 768) {
+      divElement.classList.add("hidden");
     }
   });
 });

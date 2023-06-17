@@ -14,8 +14,41 @@
   </head>
   <body>
     <header>
+      <div id="menu-wrapper" class="hidden">
+        <div class="menu">
+          <button type="button" id="close-menu" class="close-button">
+            &#x2715;
+          </button>
+          <div>
+            <button class="connexion-button white-text" id="connexion-menu">
+              Connectez-vous
+            </button>
+            <a href="#"><h3>Ecrivez un avis</h3></a>
+            <a href="#"><h3>Publier des photos</h3></a>
+            <a href="#"><h3>Alertes</h3></a>
+            <a href="#"><h3>Voyages</h3></a>
+            <a href="#"><h3>Réservations</h3></a>
+          </div>
+          <div>
+            <a href="#"><h4>Hôtels</h4></a>
+            <a href="#"><h4>Activités</h4></a>
+            <a href="#"><h4>Restaurants</h4></a>
+            <a href="#"><h4>Vols</h4></a>
+            <a href="#"><h4>Location vacances</h4></a>
+            <a href="#"><h4>Shopping</h4></a>
+            <a href="#"><h4>Croisières</h4></a>
+            <a href="#"><h4>Voiture de location</h4></a>
+            <a href="#"><h4>Visites guidées</h4></a>
+            <a href="#"><h4>Ajouter un lieu</h4></a>
+            <a href="#"><h4>Compagnie aérienne</h4></a>
+            <a href="#"><h4>Travellers' Choice</h4></a>
+            <a href="#"><h4>Assistance</h4></a>
+            <a href="#"><h4>Récits de voyage</h4></a>
+          </div>
+        </div>
+      </div>
       <div class="container">
-        <span class="show-x-small" href="#">
+        <span id="menu" class="show-x-small" href="#">
           <i class="icon-menu_bars"></i>
         </span>
         <img src="./assets/img/logo.svg" alt="Logo Tripadvisor" />
@@ -32,7 +65,10 @@
             <i class="icon-notification_bell"></i>
             <p class="hide-small">Alertes</p>
           </a>
-          <button class="hide-x-small white-text" id="form">
+          <button
+            class="connexion-button hide-x-small white-text"
+            id="connexion-header"
+          >
             Connectez-vous
           </button>
           <a class="show-x-small" href="#">
@@ -49,7 +85,9 @@
       <div id="contact-form" class="hidden">
         <div class="form-wrapper">
           <form>
-            <button type="button" id="close">&#x2715;</button>
+            <button type="button" id="close-contact-form" class="close-button">
+              &#x2715;
+            </button>
             <img src="./assets/img/logo-circle.svg" alt="Logo trip-advisor" />
             <h2>Gardons le contact&nbsp;!</h2>
             <p class="red-text hidden" id="text-error">
