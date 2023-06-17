@@ -14,7 +14,7 @@
   </head>
   <body>
     <header>
-      <div id="menu-wrapper" class="hidden">
+      <nav id="menu-wrapper" class="hidden">
         <div class="menu">
           <button type="button" id="close-menu" class="close-button">
             &#x2715;
@@ -46,7 +46,7 @@
             <a href="#"><h4>Récits de voyage</h4></a>
           </div>
         </div>
-      </div>
+      </nav>
       <div class="container">
         <span id="menu" class="show-x-small" href="#">
           <i class="icon-menu_bars"></i>
@@ -82,48 +82,58 @@
       </div>
     </header>
     <main>
-      <div id="contact-form" class="hidden">
-        <div class="form-wrapper">
-          <form>
-            <button type="button" id="close-contact-form" class="close-button">
-              &#x2715;
-            </button>
-            <img src="./assets/img/logo-circle.svg" alt="Logo trip-advisor" />
-            <h2>Gardons le contact&nbsp;!</h2>
-            <p class="red-text hidden" id="text-error">
-              Une erreur s'est produite.
-            </p>
-            <label for="first-name">
-              <input
-                type="text"
-                name="firstname"
-                id="firstname"
-                placeholder="Votre prénom"
-              />
-            </label>
-            <label for="last-name">
-              <input
-                type="text"
-                name="lastname"
-                id="lastname"
-                placeholder="Votre nom"
-              />
-            </label>
-            <label for="email">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Votre adresse e-mail"
-              />
-            </label>
-            <label for="textarea">
-              <textarea name="message" id="message" rows="10"></textarea>
-            </label>
-            <button class="send-button white-text" type="submit">
-              Envoyer
-            </button>
-          </form>
+      <div id="contact-form-wrapper" class="hidden">
+        <div id="contact-form-background">
+          <div>
+            <form>
+              <button
+                type="button"
+                id="close-contact-form"
+                class="close-button"
+              >
+                &#x2715;
+              </button>
+              <img src="./assets/img/logo-circle.svg" alt="Logo trip-advisor" />
+              <h2>Gardons le contact&nbsp;!</h2>
+              <p class="red-text hidden" id="text-error">
+                Une erreur s'est produite.
+              </p>
+              <label for="firstname">
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="Votre prénom"
+                />
+              </label>
+              <label for="lastname">
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  placeholder="Votre nom"
+                />
+              </label>
+              <label for="email">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Votre adresse e-mail"
+                />
+              </label>
+              <label for="textarea">
+                <textarea name="message" id="message" rows="10"></textarea>
+              </label>
+              <button class="send-button white-text" type="submit">
+                Envoyer
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="hidden" id="confirmation-box">
+          <p>Votre message a bien envoyé</p>
+          <button id="confirmation-box-button" type="button">ok</button>
         </div>
       </div>
       <div class="container">

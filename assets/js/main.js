@@ -3,20 +3,26 @@ const $ = document; // création d'un raccourci
 $.addEventListener("DOMContentLoaded", () => {
   // Action au clic sur le bouton connexion
   $.querySelector("#connexion-header").addEventListener("click", () => {
-    $.querySelector("#contact-form").classList.toggle("hidden");
+    $.querySelector("#contact-form-wrapper").classList.toggle("hidden");
+    $.querySelector("#contact-form-background").classList.remove("hidden");
   });
 
   $.querySelector("#connexion-menu").addEventListener("click", () => {
-    $.querySelector("#contact-form").classList.toggle("hidden");
+    $.querySelector("#contact-form-wrapper").classList.toggle("hidden");
   });
 
   // Action au clic sur la croix
   $.querySelector("#close-contact-form").addEventListener("click", () => {
-    $.querySelector("#contact-form").classList.add("hidden");
+    $.querySelector("#contact-form-wrapper").classList.add("hidden");
   });
 
   $.querySelector("#close-menu").addEventListener("click", () => {
     $.querySelector("#menu-wrapper").classList.add("hidden");
+  });
+
+  $.querySelector("#confirmation-box-button").addEventListener("click", () => {
+    $.querySelector("#confirmation-box").classList.add("hidden");
+    $.querySelector("#contact-form-wrapper").classList.add("hidden");
   });
 
   // Formulaire de contact
@@ -44,7 +50,8 @@ $.addEventListener("DOMContentLoaded", () => {
       $.querySelector("#email").value = "";
       $.querySelector("#message").value = "";
 
-      $.querySelector("#contact-form").classList.add("hidden");
+      $.querySelector("#contact-form-background").classList.add("hidden");
+      $.querySelector("#confirmation-box").classList.remove("hidden");
     } catch (error) {
       $.querySelector("#text-error").classList.toggle("hidden");
       console.log(error.message);
@@ -59,8 +66,6 @@ $.addEventListener("DOMContentLoaded", () => {
     const windowWidth = window.innerWidth;
 
     const divElement = $.querySelector("#menu-wrapper");
-
-    // console.log(divElement);
 
     if (windowWidth > 768) {
       divElement.classList.add("hidden");

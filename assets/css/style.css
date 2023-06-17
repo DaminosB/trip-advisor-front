@@ -214,7 +214,7 @@ i {
 
 /* -Contact-form----------------------- */
 
-.form-wrapper {
+#contact-form-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -222,11 +222,22 @@ i {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  overflow-y: scroll;
 }
 
-.form-wrapper form {
+#contact-form-wrapper #contact-form-background {
+  height: 100%;
+  overflow-y: scroll;
+  margin: auto;
+}
+
+#contact-form-wrapper #contact-form-background > div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-form-wrapper form {
   position: relative;
   max-width: 450px;
   width: 100%;
@@ -242,13 +253,13 @@ i {
   justify-content: center;
 }
 
-.form-wrapper img {
+#contact-form-wrapper img {
   height: 40px;
   align-self: flex-start;
   margin-bottom: 30px;
 }
 
-.form-wrapper :is(input, textarea) {
+#contact-form-wrapper :is(input, textarea) {
   width: 100%;
   margin: 0 auto;
   margin-top: 20px;
@@ -256,12 +267,12 @@ i {
   border-radius: 3px;
 }
 
-.form-wrapper input {
+#contact-form-wrapper input {
   border-bottom: 1px solid black;
   height: 30px;
 }
 
-.form-wrapper .send-button {
+#contact-form-wrapper .send-button {
   background-color: black;
   width: fit-content;
   border-radius: 20px;
@@ -270,8 +281,35 @@ i {
   align-self: center;
 }
 
-.form-wrapper .send-button:hover {
+#contact-form-wrapper .send-button:hover {
   background-color: rgba(0, 0, 0, 0.7);
+  transition: 1s;
+}
+
+#confirmation-box {
+  width: 150px;
+  height: 75px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: auto;
+  position: fixed;
+  top: calc((100% - 75px) / 2);
+  left: calc((100% - 150px) / 2);
+}
+
+#confirmation-box p {
+  margin-bottom: 15px;
+}
+
+#confirmation-box button {
+  background-color: white;
+  padding: 10px 10px;
+  border-radius: 20px;
+}
+
+#confirmation-box button:hover {
+  background-color: #e2e2e2;
   transition: 1s;
 }
 
@@ -308,21 +346,19 @@ header img {
 }
 
 /* -Navigation------------------------- */
-header nav {
+header nav:not(#menu-wrapper) {
   height: var(--headerHeight);
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-header nav a {
-  /* height: 100%; */
+header nav a:not(#menu-wrapper a) {
   display: flex;
   align-items: center;
   padding: 10px 10px;
   margin-left: 18px;
   border-radius: 20px;
-  gap: 10px;
 }
 
 header nav a:hover {
@@ -770,16 +806,5 @@ footer img {
 
   .travelers-choice div {
     padding: 15px;
-  }
-
-  .form-wrapper {
-    background-color: white;
-    align-items: flex-start;
-  }
-
-  .form-wrapper form {
-    border: none;
-    max-width: 768px;
-    margin: 0;
   }
 }
