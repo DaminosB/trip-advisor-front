@@ -216,8 +216,7 @@ i {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow-y: scroll;
 }
 
 .form-wrapper form {
@@ -225,6 +224,8 @@ i {
   max-width: 450px;
   width: 100%;
   max-height: 700px;
+  height: fit-content;
+  margin: auto;
   border-radius: 15px;
   border: 1px black solid;
   background-color: white;
@@ -253,15 +254,11 @@ i {
   margin-top: 20px;
   border: 1px black solid;
   border-radius: 3px;
-  /* align-self: center; */
-  /* background-color: lightgray; */
 }
 
 .form-wrapper input {
   border-bottom: 1px solid black;
   height: 30px;
-  /* border: 3px solid red; */
-  /* margin: 0 auto; */
 }
 
 .form-wrapper .send-button {
@@ -280,7 +277,6 @@ i {
 
 .hidden {
   display: none;
-  /* border: 2px red solid; */
 }
 
 /* ------------------------------------ */
@@ -704,13 +700,11 @@ footer img {
   }
 
   .carousel-wrapper > div:first-child {
-    /* border: 1px blue solid; */
     width: 100%;
     margin: 0 0 33px 0;
   }
 
   .travelers-choice {
-    /* border: 5px solid blue; */
     max-width: 350px;
     height: 285px;
     color: white;
@@ -724,5 +718,16 @@ footer img {
 
   .travelers-choice div {
     padding: 15px;
+  }
+
+  .form-wrapper {
+    background-color: white;
+    align-items: flex-start;
+  }
+
+  .form-wrapper form {
+    border: none;
+    max-width: 768px;
+    margin: 0;
   }
 }
